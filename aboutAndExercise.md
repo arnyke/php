@@ -2,17 +2,25 @@
 
 ```
 $int = 1;  ---->  Z={..-2,-1,0,1,2};
-$string = "string"  ---->  (texte);
+$string = "string"  ---->  (texte);  $string = "" !== null;
 $boolean = 'true'| 'folse';   ----> 1|0;
 $array = array();
 $object = new stdClass();
 $float = 1.34;
 $resources   ----->  o conexiune la baza de date;
 null = null;
-
-$string = "" !== null;
+			
 ```
 ### Operators
+```
+Operatori  aritmetici
+Operatori logici
+Operatori de asignare
+Comparison Operators (Operatori de egalitate)
+Incrementing/Decrementing Operators
+Operatori de concatenare
+```
+
 
 ### 1)Operatori  aritmetici
 
@@ -62,6 +70,11 @@ $c = $a .$b;
 echo $c;
 ```
 
+### 6) Operatori de asignare 
+```
+.=
+```
+
 ### Functions
 ```
 function functionName() {
@@ -77,3 +90,7 @@ function name($argument1,$argument2)
 }
 echo suma(1,5);
 ```
+
+
+
+
