@@ -75,22 +75,119 @@ echo $c;
 .=
 ```
 
-### Functions
+### Function
 ```
-function functionName() {
-  code to be executed;
-}
-```
-
-```
-function name($argument1,$argument2)
+function foo($arg_1, $arg_2, /* ..., */ $arg_n)
 {
-	$name = $argument1 + $argument2;
-	return $name;
+    echo "Example function.\n";
+    return $retval;
 }
-echo suma(1,5);
+poate sa ia -  arrays to functions
+-  function parameters by reference
+-  default parameters in functions
+-  non-scalar types as default values
+-  usage of default function arguments
+-  Correct usage of default function arguments
+-  to access variable arguments
+-  to provide arguments
+-  hinted variable arguments
+
+function suma ($a,$b)
+{
+$suma = $a + $b;
+return $suma;
+}
+echo suma (1,5);
+```
+### Constante magice 
+```
+echo __FILE__		-> ne afiseaza numele fisierului curent
+echo __DIR__		-> ne afiseaza directoru unde ne aflam
+echo __LINE__		-> ne afiseaza linia apelata
+echo __CLASS__		-> ne afiseaza clasa apelata
+echo __NAMESPACE__	-> ne afiseaza namespaceu curent
+echo __FUNCTION__	-> ne afiseaza numele functiei curente
+```
+###Structuri de control - conditii
+```
+-if
+-else
+-elseif/else if
+-Alternative syntax for control structures
+-while
+-do-while
+-for
+-foreach
+-break
+-continue
+-switch
+-declare
+-return
+-require
+-include
+```
+### 1)if 2) else 3) elseif/else
+``` 
+if (conditie)
+{
+executa ceva;
+}elseif{
+executa altceva;
+}else{
+executa ce vrei tu;
+}
+```
+### Switch  -
+ii asemanator ca si if()
 ```
 
+if ($i == 0) {
+    echo "i equals 0";
+} elseif ($i == 1) {
+    echo "i equals 1";
+} elseif ($i == 2) {
+    echo "i equals 2";
+}
 
+switch ($i) {
+    case 0:
+        echo "i equals 0";
+        break;
+    case 1:
+        echo "i equals 1";
+        break;
+    case 2:
+        echo "i equals 2";
+        break;
+}
+```
+### while()
+verifica  dupaia executa
+```
+while(conditie)
+{
+	executa _statemantu
+}
+echo PHP_EOL;
+```
+### do while
+prima data executa dupaia verifica conditia
+```
+do
+{
+	executa_statemantu	
+}
+while($conditia)
+	echo PHP_EOL;
+______
 
+$i = 0;
+do {
+    echo $i;
+} while ($i > 0);
+```
+###for()
+```
+
+```
 
