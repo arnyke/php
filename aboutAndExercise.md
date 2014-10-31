@@ -73,6 +73,11 @@ echo $c;
 ### 6) Operatori de asignare 
 ```
 .=
++=
+-=
+*=
+/=
+
 ```
 
 ### Function
