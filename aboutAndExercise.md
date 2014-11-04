@@ -303,8 +303,8 @@ OOP un model de solutionare a problemeor.
 class Nume Clasa
 {
 	contine proprietati si metode
-}
 	instanta unui clase->obiect
+}
 	$obj = new Nume Clasa();
 ```
 ```
@@ -384,3 +384,203 @@ echo $i->proprietate, PHP_EOL;
 - private 	- doar din interiorul clasei se poate accesa / nu se mosteneste
 - protected	- nu se poate accesa doar din interiorul clasei
 ```
+```
+###metode statice
+```
+public static function metoda()
+{
+	echo"Am fost apelat\n";
+}
+```
+Exemplu :: metoda()     //--> asa se apeleaza
+
+```
+class A 
+{
+	public function __construcut($value)
+	{
+		echo "Construct of A\n";
+	}
+	public function afiseaza($text)
+	{
+		echo "text", PHP_EOL;
+	}	
+}
+class B
+{
+	public function__construct ()
+	{
+		parent::__construct();
+		echo "construct of B\n";
+	}
+		public function afiseaza ($text)
+	{
+		parent::afiseaza(strtoupper($text));    //strtoupper caractere cu litere Mari
+	}
+}
+$a = new B();
+$a = afiseaza("Hello World");
+```
+### self   - ii rapid se inlocuieste imedeat
+### static - ii mai lent -asteapta sa vada ce se intampla... inlocuieste mai tarziu
+
+```
+class A
+{
+	const x = "Sumt o constanta";
+}
+class B extends A
+{
+	const x = "Sunt suprascris";
+}
+echo B::x, PHP_EOL;
+```
+### tipe hinting
+```
+class B
+{
+	protected $text;
+	public function__construct($text);
+	{
+		$this ->text=$text;
+	}
+	public function getText();
+	{
+		return $this ->text;
+	}
+}
+classA
+{
+	public function write($b); // merge in toate clasele // accepta si arrayuri($b) // acepta doar clase B write(B, $b)
+	{
+		echo $b->getText(), PHP_EOL;
+	}
+}
+$b = new B("Hello World");
+```
+
+###Clase si metode ABSTRACTE
+
+-notatia abstract   // metoda abstracta este doar semnatura unei metode
+```
+abstract class Name Class
+{
+	//constructor abstract -> cand vrem sa fortam un array unui argument
+	public function __constrcut(array($b))
+	public abstract function metoda();
+	public function concrete()
+	{
+		return 123;
+	}
+}
+abstract Class x extends NumeClass
+```
+Abstracte  pot fi   - public 
+					- protected
+
+				-constuctorii se mostenesc
+				- o clasa abstracta nu poate fi instantiata
+
+
+### Interfete
+
+- Interfata este o colectie de metode abstracte si declaram numa semnatura lor.
+- o clasa poate implementa 1 sau mai multe interfete
+- interfetele pot extinde alte interfete
+- interfetele ajuta la abstractizare
+- interfetele ajuta la polimorfism A->B->C->H->D;
+
+se declara:
+```
+interface Nume Interfata
+{
+	metodele -> sunt publice tot timpu;
+	public static -> putem avea metode statice;
+}
+```
+exemplu:
+```
+interface stringInterface
+{
+	public function __toString();
+	{
+		class A
+		{
+			public function__toString();
+			echo "Hello";
+		}
+	}
+}
+$a = new A();
+echo $a;
+```
+
+### METODE Magice
+
+```
+__call   
+
+// primeste nume si array de argument
+```
+class A
+{
+	public function __call($name, $argument)
+	{
+		echo "$name(" . "implode(" . "$arguments)" . ")", PHP_EOL;
+	}
+}
+$a = new A();
+$a = test(1, 2) -> alta("x");
+
+```
+__ call static 
+// metode statice
+```
+	public static function __call static($name, $argument)
+```
+__get
+// returneaza o proprietate
+public function __get($name)
+{
+	echo $name, PHP_EOL;
+
+}
+```
+public function __get($name);
+{
+	echo $name, PHP_EOL;
+	return $this;	
+}
+$a = new A (new B());
+$a = y->z->u;
+```
+
+__set 
+
+//seteaza o valoare unei propietati
+
+__isset
+
+// se verifica daca avem acces la o proprietate
+fublic function __isset($name)
+{
+	return isset ($this->[$name]);
+}
+
+__ unset 
+
+cand avem sa stergen o proprietate 
+{
+	public function __unset ($name)
+	{
+		return $this->$name;
+	}
+}
+
+__toString
+
+//putem hotara ce sa returneze
+
+__invoke()
+
+// primeste ca argumente ce vrem noi.

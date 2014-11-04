@@ -81,11 +81,61 @@ abstract Class FiguraGeometrica
 class Patrat 
 //extends FiguraGeometrica
 {	
-	function __construct(integer $l)
+	function __construct($l)
 	{
 		$this->latura = $l; 
 	}
 }
-$obj = new Patrat(4);
-var_dump($obj);
+/*$obj = new Patrat(4);
+var_dump($obj);*/
 
+//-------------------------------------
+
+/*class A
+{
+	public function __construct($value)
+	{
+		echo "Constructoru lui A\n";
+	}
+	public function afiseaza($text)
+	{
+		echo "$text", PHP_EOL;
+	}
+}
+class B extends A
+{
+	public function __construct($value)
+	{
+		parent::__construct();
+		echo "Constructor lui B\n";
+	}
+	public function afiseaza($text)
+	{
+		parent::afiseaza(strtoupper($text));
+	}
+}
+$a = new B();
+$a = afiseaza ('Hello World');*/
+
+//-------------------------
+class Dreptungi
+{
+	protected $latime;
+	protected $lungime;
+	public function __construct($latime, $lungime)
+	{
+		$this -> latime = $latime;
+		$this -> lungime = $lungime;
+	}
+	public function aria()
+	{
+		return $this ->latime * $this ->lungime;
+	}
+	public function perimetru()
+	{
+		return 2*($this->latime + $this->lungime);
+	}
+}
+$d = new Dreptungi(4,8);
+echo $d->aria(),PHP_EOL;
+echo $d->perimetru(), PHP_EOL;
